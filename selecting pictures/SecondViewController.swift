@@ -116,7 +116,7 @@ class SecondViewController: UIViewController {
     //ボタンのデザイン
     func styleCaptureButton() {
         cameraButton.layer.cornerRadius = 38.0
-        cameraButton.backgroundColor = UIColor.red
+        cameraButton.backgroundColor = UIColor.brown
         cameraButton.layer.borderColor = UIColor.white.cgColor
         cameraButton.layer.borderWidth = 6.0
     }
