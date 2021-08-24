@@ -8,7 +8,7 @@
 import UIKit
 import AVFoundation
 
-extension ViewController: AVCapturePhotoCaptureDelegate{
+extension SecondViewController: AVCapturePhotoCaptureDelegate{
     func photoOutput(_ output: AVCapturePhotoOutput,
                     didFinishProcessingPhoto photo: AVCapturePhoto,
                     error: Error?){
@@ -19,9 +19,9 @@ extension ViewController: AVCapturePhotoCaptureDelegate{
     }
 }
 
-class ViewController: UIViewController {
-
+class SecondViewController: UIViewController {
     
+        
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
@@ -97,15 +97,20 @@ class ViewController: UIViewController {
     var cameraPreviewLayer: AVCaptureVideoPreviewLayer?
     
     func setupPreviewLayer() {
+        
         //初期化（イニシャライズ）
         self.cameraPreviewLayer = AVCaptureVideoPreviewLayer(session: captureSession)
         //プレビューレイヤーの縦横比を定める
         self.cameraPreviewLayer?.videoGravity = AVLayerVideoGravity.resizeAspectFill
         //プレビューレイヤーの表示の向き
-        self.cameraPreviewLayer?.connection?.videoOrientation = AVCaptureVideoOrientation.portrait
         
+            self.cameraPreviewLayer?.connection?.videoOrientation = AVCaptureVideoOrientation.portrait
+           
         self.cameraPreviewLayer?.frame = view.frame
+        
         self.view.layer.insertSublayer(self.cameraPreviewLayer!, at: 0)
+       
+        
     }
     
     //ボタンのデザイン
